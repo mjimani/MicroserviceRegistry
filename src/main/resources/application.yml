@@ -1,9 +1,5 @@
-server:
-  port: 8761
 spring:
   application:
     name: Registry
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
+  config:
+    import: optional:configserver:${SPRING_CLOUD_CONFIG_URI:http://localhost:8081}
